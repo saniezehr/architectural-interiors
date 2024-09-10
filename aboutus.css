@@ -1,0 +1,263 @@
+/* about us banner */
+
+
+.aboutus_section {
+    background-color: #d2b48c;
+    clip-path: ellipse(80% 80% at 50% 5%);
+    padding: 80px 0;
+}
+.content_section {
+    background-color: #d2b48c;
+    clip-path: ellipse(80% 80% at 50% 5%);
+}
+
+.aboutus_content {
+    padding: 20px;
+    background-color: #a57d56;
+    border-radius: 10px;
+    margin-top: 170px;
+    color: white;
+    text-align: center;
+}
+
+.aboutus_content p {
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .aboutus_section {
+        clip-path: ellipse(100% 100%);
+        height: 850px; 
+    }
+    .kidroom{
+        margin-top: 40px;
+    }
+
+}
+/* aboutus animation */
+.slider_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.sliderimg {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: animate 20s linear infinite;
+    margin-bottom: 210px;
+    margin-left: 70px;
+}
+
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.sliderimg span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 60deg)) translateZ(220px);
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
+}
+
+.sliderimg span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 18px;
+    height: 100%;
+    object-fit: cover;
+}
+@media (width > 768px){
+    
+}
+@media (width < 768px) {
+    .slider_body {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .sliderimg {
+        width: 150px;
+        height: 150px;
+        margin-left: 0;
+        margin-top: 100px;
+
+    }
+
+    .sliderimg span {
+        transform: rotateY(calc(var(--i) * 60deg)) translateZ(165px);
+    }
+    
+    
+}
+/* products */
+.about-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-heading h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.about-heading p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-item {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.about-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.about-item img {
+    display: block;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.about-item:hover img {
+    transform: scale(1.1) rotateX(5deg) rotateY(5deg);
+}
+
+.about-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    color: #fff;
+    z-index: 1;
+}
+
+.overlay-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.overlay-content p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* information */
+
+.section {
+    padding: 80px 0;
+}
+
+.aboutus_information{
+    background-color: #d2b48c;
+    padding: 50px 0;
+    clip-path: ellipse(80% 80% at 50% 5%);
+    margin-top: 50px;
+}
+@media (max-width: 768px) {
+
+.aboutus_information{
+    clip-path: ellipse(100% 100%);  
+    }
+    .aboutus_content{
+        margin-bottom: auto;
+    }
+    .our_mission{
+        margin-bottom: 20px;
+    }
+    .design_philosophy{
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Contact Form Styles */
+    .contactus{
+        height: 800px;
+    }
+    .contactus_button{
+            color: black;
+           margin-top: auto;
+            padding: 10px 30px;
+            background-color:  rgb(227, 192, 146) ;
+            border: 1px solid rgb(71, 41, 3);
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgb(227, 192, 146) ;
+            transition: 0.5s;
+           
+
+        }
+        .contactus_button:hover{
+            box-shadow: 0 0 5px  rgb(71, 41, 3) ,0 0 7px rgb(71, 41, 3)
+            ,0 0 9px  rgb(71, 41, 3) ,0 0 11px  rgb(71, 41, 3);
+        }
+.form-control {
+    
+    border:1px solid  rgb(71, 41, 3); /* Use the desired shade of brown */
+}
+
+.form-control:focus {
+    border-color: #8B4513; 
+    box-shadow: 0 0 1px  rgb(71, 41, 3) ,0 0 3px rgb(71, 41, 3)
+    ,0 0 5px  rgb(71, 41, 3) ,0 0 7px  rgb(71, 41, 3);
+}
+.footer{
+    position: relative;
+  }
+  
+  /* animation */
+  .website{
+    transform: translateY(-100px); /* Starts off-screen from above */
+    opacity: 0;
+transition: opacity 2s ease-out, transform 2s ease-out;
+/* font-size: 5rem; */
+}
+.website.visible{
+    opacity: 1;
+    transform: translateY(0); /* Moves to normal position */
+}

@@ -1,0 +1,689 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chair</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <!-- icon link -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="header.css">
+  <script src="animation.js"></script>
+  <link rel="stylesheet" href="aboutus.css">
+  <style>
+
+    #cart-icon {
+      position: absolute;
+      margin-top:20px;
+      margin-bottom:10px;
+      right: 20px;
+      background-color: rgb(71, 41, 3);
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #cart-icon span {
+      margin-left: 5px;
+      font-weight: bold;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      gap: 20px;
+    }
+    @media(width < 768px){
+      .products{
+        grid-template-columns: repeat(1,1fr);
+        margin: 40px 0px 0px 10px;
+       width: 100%;
+
+      }
+    }
+    @media only screen and (max-width: 767px) {
+  .product-div {
+    margin: 0 !important; /* Forcefully override other styles */
+    width: 100% !important;
+  }
+}
+
+   
+    .full{
+      display: flex;
+    }
+    .product {
+      border: 1px solid #ddd;
+      text-align: center;
+padding-bottom: 30px;
+    }
+    .product img {
+      width: 90%;
+      height: 400px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  
+    .product-div{
+      width: 84%;
+      /* margin-left: 250px;
+      margin-top: 70px; */
+      margin: 70px 0px 0px 250px ;
+    }
+    
+    /* sidenav */
+    .sidenav{
+        height: 85%;
+        width: 15%; 
+        position: fixed;  
+        padding-top: 30px;
+        border: 2px solid transparent;
+    }
+.sidetext{
+        color:rgb(71, 41, 3)  ;
+
+}
+    .sidenav a {
+        padding: 10px 15px;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+    }
+
+    .sidenav a:hover {
+        background-color: rgb(227, 192, 146);
+        color: rgb(71, 41, 3); 
+    }
+    .fullset{
+      background-color: rgb(227, 192, 146);
+      color: rgb(71, 41, 3);
+    }
+
+.beds-boxes{
+  width: 40%;
+  height: 150px;
+  background-color: rgb(71, 41, 3);
+  border: 1px solid rgb(227, 192, 146);
+  color: rgb(227, 192, 146);
+  display: inline-block;
+  margin-inline: 4px;
+  margin-block:10px ;
+  text-align: center;
+  vertical-align: middle;
+border-radius: 50%;
+line-height: 150px;
+}
+ .responsive_design_box{
+  overflow-x: auto;
+  white-space: nowrap;
+ }
+ #beds-page{
+    background-color: rgb(227, 192, 146);
+    color: rgb(71, 41, 3);
+}
+    @media(width< 760px)
+     {
+        .sidenav 
+        {
+        padding-top: 15px;
+        width: 110px;
+        display: none;
+        
+    }
+    
+        .sidenav a 
+        {font-size: 18px;}
+        #cart-icon{
+  left: 140px;
+  position: relative;
+  border-radius: 0px;
+  background-color: transparent;
+}
+#cart-count{
+  color:rgb(227, 192, 146);
+}
+    }
+    @media(width>760px){
+      .responsive_design_box{
+        display: none;
+      }
+      .cart-icon{
+        background-color: white;
+        position: absolute;
+    
+      }
+      #cart-icon{
+        display: none;
+      }
+    }
+.btn-details{
+  height: 40px;
+  width: 120px;
+  border-radius: 10px;
+  background-color: rgb(96, 62, 18);
+  color: rgb(227, 192, 146);
+}
+.btn-details:hover{
+  background-color: rgb(227, 192, 146);
+  color: rgb(96, 62, 18);
+}
+.btn-details {
+  transition: all 0.3s ease-in-out 0s;
+}
+.bed{
+  background-color: rgb(227, 192, 146);
+}
+.footer{
+  position: relative;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container-website">
+  <nav class="navbar navbar-expand-lg navbar-light " >
+    <div class="container">
+
+      <a class="navbar-brand " href="#"> <img src="image/logo/Architectural-removebg-preview.png" alt="" width="100px" height="100px"></a>
+    
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon "></span>
+        </button>
+        <div class=" collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"  data-bs-toggle="dropdown" >
+                        Products
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item " href="beds.html">Bed Room</a></li>
+                        <li><a class="dropdown-item " href="kids.html">Kids</a></li>
+                        <li><a class="dropdown-item " href="livingroom_sofa.html">Living Room</a></li>
+                        <li><a class="dropdown-item" href="diningroom_set.html">Dining Room</a></li>
+                        <li><a class="dropdown-item" href="studyroom_erconomic.html">Study Room</a></li>
+                        <li><a class="dropdown-item" href="office.html">Office</a></li>
+                        <li><a class="dropdown-item" href="kitchen.html">Kitchen</a></li>
+                        <li><a class="dropdown-item" href="mirror.html">Mirrors</a></li>
+                        <li><a class="dropdown-item" href="homedecor.html">Home Decor</a></li>
+                        <li><a class="dropdown-item" href="warddrobe.html">Warddrobe</a></li>
+                        <li><a class="dropdown-item" href="door.html">Doors</a></li>
+                </li>
+            </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="aboutus1.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contactus.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="customprod.html">Custom product</a>
+              </li>
+            </ul>
+
+          <div id="cart-icon" onclick="location.href='cart.html'">
+            🛒 <span id="cart-count">0</span>
+          </div>
+        </div>
+    </div>
+</nav>
+<br><br><br><br><br>
+
+<div class="responsive_design_box website">
+  <a href="#bedroom" ><div class="beds-boxes" >BED ROOM <i class="fas fa-bed    "></i></div></a>
+  <a href="#kids" ><div class="beds-boxes">KIDS <i class="fas fa-bed    "></i></div></a>
+  <a href="#living" ><div class="beds-boxes">LIVING ROOM <i class="fa fa-bed" aria-hidden="true"></i></div></a>
+  <a href="#dining" ><div class="beds-boxes">DINING ROOM <i class="fas fa-cabinet-filing    "></i></div></a>
+  <a href="#study" ><div class="beds-boxes">STUDY ROOM <i class="fas fa-cabinet-filing    "></i></div></a>
+  <a href="#office" ><div class="beds-boxes">OFFICE <i class="fa fa-heart" aria-hidden="true"></i></div></a>
+  <a href="#kitchen" ><div class="beds-boxes">KITCHEN<i class="fas fa-couch    "></i></div></a>
+  <a href="#mirror" ><div class="beds-boxes">MIRRORS <i class="fas fa-couch    "></i></div></a>
+  <a href="#homedecor" ><div class="beds-boxes" id="beds-page">HOME DECOR <i class="fas fa-chair    "></i></div></a>
+  <a href="#wardrobe" ><div class="beds-boxes" id="beds-page">WARDROBE <i class="fas fa-chair    "></i></div></a>
+  <a href="#door" ><div class="beds-boxes" id="beds-page">DOORS <i class="fas fa-chair    "></i></div></a>
+
+</div>
+<div class="full">
+<div id="mySidenav" class="sidenav website">
+  <a href="#bedroom" class="sidetext">BED ROOM <i class="fas fa-bed    "></i></a>
+  <a href="#kids" class="sidetext">KIDS <i class="fas fa-bed"></i></a>
+  <a href="#living" class="sidetext">LIVING ROOM <i class="fa fa-bed" aria-hidden="true"></i></a>
+  <a href="#dining" class="sidetext">DINING ROOM <i class="fas fa-cabinet-filing    "></i></a>
+  <a href="#study" class="sidetext">STUDY ROOM <i class="fas fa-cabinet-filing    "></i></a>
+  <a href="#office" class="sidetext">OFFICE <i class="fa fa-heart" aria-hidden="true"></i></a>
+  <a href="#kitchen" class="sidetext">KITCHEN<i class="fas fa-couch    "></i></a>
+  <a href="#mirror" class="sidetext">MIRRORS <i class="fas fa-couch    "></i></a>
+  <a href="#homedecor" class="sidetext">HOME DECOR <i class="fas fa-chair    "></i></a>
+  <a href="#wardrobe"  class="sidetext">WARDROBE <i class="fas fa-chair    "></i></a>
+  <a href="#door"  class="sidetext">DOORS<i class="fas fa-chair    "></i></a>
+
+
+</div>
+<div class="product-div">
+<h2 class="text-center website mb-5">BEST SELLERS</h2>
+  <div class="products website bedroom " id="bedroom"></div>
+  <div class="products website kids " id="kids"></div>
+  <div class="products website living " id="living"></div>
+  <div class="products website dining " id="dining"></div>
+  <div class="products website study " id="study"></div>
+  <div class="products website office " id="office"></div>
+  <div class="products website kitchen " id="kitchen"></div>
+  <div class="products website mirror " id="mirror"></div>
+  <div class="products website homedecor " id="homedecor"></div>
+  <div class="products website wardrobe " id="wardrobe"></div>
+  <div class="products website door " id="door"></div>
+</div>
+
+</div>
+  
+<!-- Footer start -->
+<footer class="footer text-center text-lg-start bg-body-tertiary text-muted " style="background-color: rgb(71, 41, 3);">
+  <section class="">
+      <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Contact -->
+                  <h6 class="text-uppercase fw-bold mb-4 mt-3 ">
+                      <img src="image/logo/Architectural-removebg-preview.png" alt="" width="150px" height="150px"> 
+                  </h6>
+                  <p>
+                      <h4 style="color: rgb(227, 192, 146);">Contact</h4>
+                      <div style="color: #ffff;">
+                          <span class="fw-bold me-2">->Address :-</span><span >1972-72,Shop No-2,Captain Tapan Kumar Market, Chandni Chowk, Delhi 110006, India</span><br>
+                          <span class="fw-bold me-2">->Phone :-</span><span >+917982579208</span><br>
+                          <span class="fw-bold me-2">->Hours :-</span><span >10:00 am - 06:00 pm Mon - Sat</span>
+                      </div>
+                  </p>
+              </div>
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 mt-4 ">
+                  <!-- quick acces -->
+                  <h6 style="color: rgb(227, 192, 146);" class="text-uppercase fw-bold mb-4">Quick Access</h6>
+                  <div style="color: #fff; text-decoration: none;">
+                      <p><a href="aboutus1.html" class="text-reset" style="text-decoration: none;">About Us</a></p>
+                      <p><a href="services.html" class="text-reset" style="text-decoration: none;">Services</a></p>
+                      <p><a href="contactus.html" class="text-reset" style="text-decoration: none;">Contact Us</a></p>
+                  </div>
+              </div>
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 mt-4 ">
+              <!-- accounts -->
+                  <h6 style="color: rgb(227, 192, 146);" class="text-uppercase fw-bold mb-4">My Accounts</h6>
+                  <div style="color: #ffff;">
+                      <p><a href="sigin.html" class="text-reset" style="text-decoration: none;">Sign In</a></p>
+                      <p><a href="cart.html" class="text-reset" style="text-decoration: none;">View Cart</a></p>
+                  </div>
+              </div>
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 mt-4 ">
+              <!-- apps -->
+                  <h6  style="color: rgb(227, 192, 146);" class="text-uppercase fw-bold mb-4">Install App</h6>
+                  <p style="color: #ffff;"> From App Store or Google Play</p>
+                
+                      <span><img  class="rounded-start rounded-end mb-3" src="image/footer/app.jpg" alt="" ></span> <br>
+                      <span ><img  class="rounded-start rounded-end" src="image/footer/play.jpg" alt="" ></span>
+                   <br>
+                  <p style="color: #ffff;">Secure Payment Gateways</p>
+                  <span><img src="image/footer/pay.png" alt=""></span>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- social media icons -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom container ">
+      <div style="color: #ffff;">
+          <a href="https://facebook.com/login/" class="me-4 text-reset" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/i/flow/login" class="me-4 text-reset" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.indiamart.com/venushandicrafts/" class="me-4 text-reset" target="_blank"><i class="fab fa-google"></i></a>
+          <a href="https://www.instagram.com/accounts/login/" class="me-4 text-reset" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/login" class="me-4 text-reset" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p style="color: white;">&copy; 2020 Copyright: VenusHandicrafts.com</p>
+  </section>
+</footer>
+<!-- footer end -->
+  </div>
+  <script>
+
+    //beds
+
+    const bedroom = [
+    { id: 6, name: "  Olive Green King Size bed ", delprice: 21000, price:19000, image: "image/beds/kingsize/king6.jpg" },
+    { id: 8, name: " Golden Trim-Black King Size bed ", delprice: 24500, price:21000, image: "image/beds/kingsize/king8.jpg"},
+    { id: 17, name: " Silver Velvet Queen Size bed ", delprice:30000,price: 26000, image: "image/beds/queensize/queen5.jpg" },
+    { id: 18, name: "Wingback Headboard Queen Size bed ", delprice:27000,price: 21000, image: "image/beds/queensize/queen6.jpg" },
+    { id: 48, name: "White Dresser With Round Mirror & Chair",delprice:20000, price: 18000, image: "image/beds/mirrors&dressers/mr7.jpg" },
+    { id: 50, name: "Grey Drawer With Elegant Mirror & Chair", delprice:23600, price: 22000, image: "image/beds/mirrors&dressers/mr9.jpg" },
+    { id: 53, name: "White Dresser & Storage Blocks With Mirror & Chair", delprice:27000, price: 25000, image: "image/beds/mirrors&dressers/mr12.jpg"},
+    { id: 127, name: "Minimalist Wardrobe And Closet Cabinet for Bedroom", delprice:28000, price: 24500, image: "image/beds/wardrobe/w8.jpg" },
+    { id: 128,name:"Richmond Ridged Double Wardrobe with Drawer, Matte Sage Green", delprice:29000, price: 23500, image: "image/beds/wardrobe/w9.jpg" },
+
+    ];
+
+
+    //kids
+
+    const kids = [
+        { id: 132, name: "Mayra Cloud Shaped Headboard Bed Frame", delprice: 23000,price:20000, image: "image/kidsroom/beds/b1.jpg" },
+        { id: 133, name: " Charming Children's Room Makeover ", delprice: 33000, price: 29000,image: "image/kidsroom/beds/b2.jpg"},
+        { id: 134, name: " Girls Bed With Slides 7 shelves", delprice: 46000, price:40000, image: "image/kidsroom/beds/b14.jpg"},
+        { id: 135, name: " Wooden Race Car Bed WIth Storage Shelves & Wheels For Kids", delprice: 26000, price:23000, image: "image/kidsroom/beds/b13.jpg"},
+        { id: 136, name: "Classic Blue Car Shaped Bed", delprice: 39000, price:35000, image: "image/kidsroom/beds/b11.jpg"},
+        { id: 147, name: "Kids Cloud Light ", delprice: 5500, price: 3000,image: "image/kidsroom/lights/l2.jpg"},
+        { id: 148, name: "Cute Planet Light", delprice: 4900, price:2500, image: "image/kidsroom/lights/l3.jpg"  },
+        { id: 154, name: "Stylish Green Kids Dresser", delprice: 13000,price:10000, image: "image/kidsroom/dressers/d1.jpg" },
+        { id: 155, name: "Beige Kids Dresser", delprice: 11000, price: 9000,image: "image/kidsroom/dressers/d2.jpg"},
+        { id: 166, name: "Small Kid Wood Mirro", delprice: 12000, price:8000, image: "image/kidsroom/mirror/m6.jpg" },
+        { id: 167, name: "Kids Dinorsour Mirror ", delprice: 13000, price:7000, image: "image/kidsroom/mirror/m7.jpg"},
+
+    ];
+
+
+    //living
+    
+    const living = [
+    { id: 175, name: "Stylish Beige 3 Seater Sofa", delprice: 20000,price:18000, image: "image/living_room/sofa/s1.jpg" },
+    { id: 193, name: "Tweedy Plain Light Natural Wilson Grande Arm Chair", delprice: 15000, price: 11000,image: "image/living_room/armchair/ac2.jpg"},
+    { id: 194, name: "Stylish White Arm Chair", delprice: 12000, price:8000, image: "image/living_room/armchair/ac3.jpg"},
+    { id: 231, name: "Leaf Embroidered Sheer Curtain For Living Room", delprice: 5000, price:3500, image: "image/living_room/curtain/cu4.jpg"},
+    { id: 232, name: "ANVIGE Modern Fashion Green & Yellow Color Curtain", delprice: 7300, price:4000, image: "image/living_room/curtain/cu5.jpg"},
+    { id: 206, name: "Colourfull 5 Pillow Set", delprice:9000, price:6000, image: "image/living_room/cusions/c3.jpg"},
+    { id: 207, name: "Beige Pillow", delprice: 6000, price:3000, image: "image/living_room/cusions/c4.jpg"},
+
+    ];
+
+    //dining
+
+    const dining = [
+    { id: 237, name: "4 Seater White Table & Chair", delprice: 22000,price:18000, image: "image/dining_room/dining_set/d1.jpg" },
+    { id: 238, name: "6 Seater Wood Table & chair", delprice: 24000, price: 20000,image: "image/dining_room/dining_set/d2.jpg"},
+    { id: 259, name: "Golden Bar Cart With 2 Shelves", delprice: 22000, price:19000, image: "image/dining_room/barcarts/b4.jpg"},
+    { id: 260, name: "Serving Bar Cart Tea Trolley ", delprice: 28000, price:22000, image: "image/dining_room/barcarts/b5.jpg"},
+    { id: 270, name: "Dark Green Chinese Set", delprice: 26000, price:20000, image: "image/dining_room/dinner_ware/d4.jpg"},
+    { id: 275, name: "Modern Cluster Pendant Gold Cut Crystal Hanging", delprice: 13000, price:9000, image: "image/dining_room/pendant_lights/p3.jpg"},
+    { id: 276, name: "Vintage Light Features Japanese", delprice: 16500, price:7000, image: "image/dining_room/pendant_lights/p4.jpg"},
+
+    ];
+
+    //study
+
+    const study = [
+    { id: 285, name: " Homezeer Home Office Desk Chair", delprice: 24000, price: 20000,image: "image/studyroom/ergonomic_chair/e2.jpg"},
+    { id: 286, name: "Kerdom Office Chair Adjustable Height", delprice: 23500, price:19000, image: "image/studyroom/ergonomic_chair/e3.jpg"},
+    { id: 296, name: "Stylish Beige Desk With Shelves And Drawers", delprice: 16500, price:11000, image: "image/studyroom/cabinets/c3.jpg"},
+    { id: 297, name: "Amazing 12 Shelves For Storage", delprice: 16500, price:12000, image: "image/studyroom/cabinets/c4.jpg"},
+    { id: 302, name: "Green table lamp with pencil case", delprice: 13000, price:9000, image: "image/studyroom/lamp/l3.jpg"},
+    { id: 303, name: "Nordic Wood Table Lamp", delprice: 16500, price:7000, image: "image/studyroom/lamp/l4.jpg"},
+
+    ];
+
+    //office
+
+    const office = [
+    { id: 313, name: "Modern Large Grey Oak Meeting Table", delprice: 20000, price:17000, image: "image/office/m_tables/m6.jpg"},
+    { id: 310, name: "White Minimalist Style Conference Table", delprice: 27500, price:21000, image: "image/office/m_tables/m3.jpg"},
+    { id: 316, name: "Modern White Office Chair Upholstered Cotton ", delprice: 16500, price:12000, image: "image/office/chairs/c3.jpg"},
+    { id: 318, name: "Modern Blue Velvet Bar Stool With Black & Metal Footrest", delprice: 13000, price:10000, image: "image/office/chairs/c5.jpg"},
+    { id: 320, name: " Modern Meeting Pod", delprice: 29000, price: 23000,image: "image/office/meeting_pods/m1.jpg"},
+
+    ];
+
+    //kitchen
+
+    const kitchen = [
+    { id: 324, name: "Modern Grey Velvet Upholstered Bar Stool", delprice: 17000, price: 14000,image: "image/kitchen/barchairs/b1.jpg"},
+    { id: 329, name: "Pannel Height- Adjustable Bar Chair Set", delprice: 14000, price:10000, image: "image/kitchen/barchairs/b6.jpg"},
+    { id: 330, name: "Linenic Grey PU Leather Modern Bar Stool", delprice: 17000, price:12000, image: "image/kitchen/barchairs/b7.jpg"},
+    { id: 336, name: "Luxury Dark Blue Kichen Cabinets", delprice: 26000, price:22000, image: "image/kitchen/cabinets/c5.jpg"},
+    { id: 332, name: " Stylish Black Cabinets For Kitchen", delprice: 23000, price: 20000,image: "image/kitchen/cabinets/c1.jpg"},
+    { id: 334, name: "Elegant Kitchen Cabinets ", delprice: 27500, price:21000, image: "image/kitchen/cabinets/c3.jpg"},
+
+    ];
+    
+    //mirror
+
+    const mirror = [
+    { id: 341, name: "Asthetic Stylish Mirror ", delprice: 12000, price:8000, image: "image/categories_home/mirrors.jpg"},
+    { id: 345, name: "Rectangular Mirror", delprice: 17000, price:9000, image: "image/mirror/m6.jpg"},
+    { id: 343, name: "Full Length Led Mirror", delprice: 15000, price:6500, image: "image/mirror/m4.jpg"},
+    { id: 342, name: "Full Length Oval Mirror", delprice: 14500, price:6000, image: "image/mirror/m3.jpg"},
+    { id: 347, name: "Stylish Full Lenght Mirror", delprice: 13500, price:7500, image: "image/mirror/m8.jpg"},
+    { id: 348, name: "Arces Arched Floor Mirror", delprice: 14000, price:8500, image: "image/mirror/m9.jpg"},
+
+    ];
+
+    //homedecor
+
+    const homedecor = [
+    { id: 351, name: "Rubix Candle", delprice: 7000, price: 3500,image: "image/home_decor/candles/c1.jpg"},
+    { id: 352, name: "Cloud Candle", delprice: 8000, price:5500, image: "image/home_decor/candles/c2.jpg"},
+    { id: 354, name: "Alabaster Tealight Cylinder Candle", delprice: 9000, price:3500, image: "image/home_decor/candles/c4.jpg"},
+    { id: 364, name: "Stylish Vase For Dried Flower", delprice: 7000, price: 5000,image: "image/home_decor/vase/v1.jpg"},
+    { id: 387, name: "3pcs Modern Geometric Wall Clock Decor Set ", delprice: 7300, price:6000, image: "image/home_decor/clock/c12.jpg"},
+
+    ];
+
+    //wardrobe 
+
+    const wardrobe = [
+    { id: 129, name: "Trosa Sliding Door Wardrobe ", delprice:24000, price: 20000, image: "image/beds/wardrobe/w10.jpg" },
+    { id: 130, name: "Stylish Beige & Light Brown Wardrobe", delprice:35000, price: 29000, image: "image/beds/wardrobe/w11.jpg" },
+    ];
+
+    //doors
+
+    const door = [
+    { id: 389, name: "Thermal Break Single Iron Wrought Door", delprice:18000,price: 15000, image: "image/doors/d2.jpg" },
+    ];
+
+    
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      document.getElementById('cart-count').textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+    }
+
+    function renderProducts() {
+
+      
+      const bedroomContainer = document.getElementById('bedroom');
+      bedroom.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerHTML = `
+          <img src="${product.image}" alt="">
+          <h4>${product.name}</h4>
+      <del>${product.delprice}</del>
+          <p>Price: ${product.price.toFixed()}rs</p>
+<button onclick="location.href='product-detail.html?id=${product.id}'" class="btn-details">View Details</button>
+        `;
+        bedroomContainer.appendChild(productDiv);
+      });
+    
+      //kids
+      
+      const kidsContainer = document.getElementById('kids');
+      kids.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerHTML = `
+          <img src="${product.image}" alt="">
+          <h4>${product.name}</h4>
+      <del>${product.delprice}</del>
+          <p>Price: ${product.price.toFixed()}rs</p>
+<button onclick="location.href='product-detail.html?id=${product.id}'" class="btn-details">View Details</button>
+        `;
+        kidsContainer.appendChild(productDiv);
+      });
+
+
+   
+    //living
+
+    const livingContainer = document.getElementById('living');
+      living.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerHTML = `
+          <img src="${product.image}" alt="">
+          <h4>${product.name}</h4>
+      <del>${product.delprice}</del>
+          <p>Price: ${product.price.toFixed()}rs</p>
+<button onclick="location.href='product-detail.html?id=${product.id}'" class="btn-details">View Details</button>
+        `;
+        livingContainer.appendChild(productDiv);
+      });
+
+
+      //dining
+
+      const diningContainer = document.getElementById('dining');
+      dining.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerHTML = `
+          <img src="${product.image}" alt="">
+          <h4>${product.name}</h4>
+      <del>${product.delprice}</del>
+          <p>Price: ${product.price.toFixed()}rs</p>
+<button onclick="location.href='product-detail.html?id=${product.id}'" class="btn-details">View Details</button>
+        `;
+        diningContainer.appendChild(productDiv);
+      });
+
+      //study
+
+      const studyContainer = document.getElementById('study');
+      study.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerHTML = `
+          <img src="${product.image}" alt="">
+          <h4>${product.name}</h4>
+      <del>${product.delprice}</del>
+          <p>Price: ${product.price.toFixed()}rs</p>
+<button onclick="location.href='product-detail.html?id=${product.id}'" class="btn-details">View Details</button>
+        `;
+        studyContainer.appendChild(productDiv);
+      });
+
+
+      //office
+
+      const officeContainer = document.getElementById('office');
+      office.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerHTML = `
+          <img src="${product.image}" alt="">
+          <h4>${product.name}</h4>
+      <del>${product.delprice}</del>
+          <p>Price: ${product.price.toFixed()}rs</p>
+<button onclick="location.href='product-detail.html?id=${product.id}'" class="btn-details">View Details</button>
+        `;
+        officeContainer.appendChild(productDiv);
+      });
+
+
+      //kitchen
+
+      const kitchenContainer = document.getElementById('kitchen');
+      kitchen.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerHTML = `
+          <img src="${product.image}" alt="">
+          <h4>${product.name}</h4>
+      <del>${product.delprice}</del>
+          <p>Price: ${product.price.toFixed()}rs</p>
+<button onclick="location.href='product-detail.html?id=${product.id}'" class="btn-details">View Details</button>
+        `;
+        kitchenContainer.appendChild(productDiv);
+      });
+
+      //mirrors
+
+      const mirrorContainer = document.getElementById('mirror');
+      mirror.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerHTML = `
+          <img src="${product.image}" alt="">
+          <h4>${product.name}</h4>
+      <del>${product.delprice}</del>
+          <p>Price: ${product.price.toFixed()}rs</p>
+<button onclick="location.href='product-detail.html?id=${product.id}'" class="btn-details">View Details</button>
+        `;
+        mirrorContainer.appendChild(productDiv);
+      });
+
+
+      //homedecor
+
+      const homedecorContainer = document.getElementById('homedecor');
+      homedecor.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerHTML = `
+          <img src="${product.image}" alt="">
+          <h4>${product.name}</h4>
+      <del>${product.delprice}</del>
+          <p>Price: ${product.price.toFixed()}rs</p>
+<button onclick="location.href='product-detail.html?id=${product.id}'" class="btn-details">View Details</button>
+        `;
+        homedecorContainer.appendChild(productDiv);
+      });
+
+      //wardrobe
+
+      const wardrobeContainer = document.getElementById('wardrobe');
+      wardrobe.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerHTML = `
+          <img src="${product.image}" alt="">
+          <h4>${product.name}</h4>
+      <del>${product.delprice}</del>
+          <p>Price: ${product.price.toFixed()}rs</p>
+<button onclick="location.href='product-detail.html?id=${product.id}'" class="btn-details">View Details</button>
+        `;
+        wardrobeContainer.appendChild(productDiv);
+      });
+
+      //doors
+
+      const doorContainer = document.getElementById('door');
+      door.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerHTML = `
+          <img src="${product.image}" alt="">
+          <h4>${product.name}</h4>
+      <del>${product.delprice}</del>
+          <p>Price: ${product.price.toFixed()}rs</p>
+<button onclick="location.href='product-detail.html?id=${product.id}'" class="btn-details">View Details</button>
+        `;
+        doorContainer.appendChild(productDiv);
+      });
+    }
+
+window.addEventListener('load', () => {
+  renderProducts();
+  updateCartCount();
+});
+
+      </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

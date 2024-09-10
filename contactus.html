@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+    />
+
+    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+<!-- <link rel="stylesheet" href="style.css"> -->
+<link rel="stylesheet" href="header.css">
+    <title></title>
+    <style>
+        .aboutus_information{
+    background-color: #d2b48c;
+    padding: 190px 100px;
+    clip-path: ellipse(80% 80% at 50% 5%);
+    /* margin-top: 50px; */
+}
+@media (max-width: 768px) {
+
+.aboutus_information{
+    clip-path: ellipse(100% 100%);  
+    }}
+    .contactus{
+        height: 1000px;
+    }
+    .contactus_button{
+            color: black;
+           margin-top: auto;
+            padding: 10px 30px;
+            background-color:  rgb(227, 192, 146) ;
+            border: 1px solid rgb(71, 41, 3);
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgb(227, 192, 146) ;
+            transition: 0.5s;
+           
+
+        }
+        .contactus_button:hover{
+            box-shadow: 0 0 5px  rgb(71, 41, 3) ,0 0 7px rgb(71, 41, 3)
+            ,0 0 9px  rgb(71, 41, 3) ,0 0 11px  rgb(71, 41, 3);
+        }
+.form-control {
+    
+    border:1px solid  rgb(71, 41, 3); /* Use the desired shade of brown */
+}
+
+.form-control:focus {
+    border-color: #8B4513; 
+    box-shadow: 0 0 1px  rgb(71, 41, 3) ,0 0 3px rgb(71, 41, 3)
+    ,0 0 5px  rgb(71, 41, 3) ,0 0 7px  rgb(71, 41, 3);
+}
+
+.website{
+            transform: translateY(-100px); /* Starts off-screen from above */
+            opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    /* font-size: 5rem; */
+        }
+        .website.visible{
+            opacity: 1;
+            transform: translateY(0); /* Moves to normal position */
+        }
+        .form-group{
+            margin-block: 3px;
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light " >
+        <div class="container">
+    
+          <a class="navbar-brand " href="#"> <img src="image/logo/Architectural-removebg-preview.png" alt="" width="100px" height="100px"></a>
+        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class=" collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"  data-bs-toggle="dropdown" >
+                            Products
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item " href="beds.html">Bed Room</a></li>
+                            <li><a class="dropdown-item " href="kids.html">Kids</a></li>
+                            <li><a class="dropdown-item " href="livingroom_sofa.html">Living Room</a></li>
+                            <li><a class="dropdown-item" href="diningroom_set.html">Dining Room</a></li>
+                            <li><a class="dropdown-item" href="studyroom_erconomic.html">Study Room</a></li>
+                            <li><a class="dropdown-item" href="office.html">Office</a></li>
+                            <li><a class="dropdown-item" href="kitchen.html">Kitchen</a></li>
+                            <li><a class="dropdown-item" href="mirror.html">Mirrors</a></li>
+                            <li><a class="dropdown-item" href="homedecor.html">Home Decor</a></li>
+                            <li><a class="dropdown-item" href="warddrobe.html">Warddrobe</a></li>
+                            <li><a class="dropdown-item" href="door.html">Doors</a></li>
+                        </li>
+                </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="aboutus1.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navhighlighted nav-link" href="contactus.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="customprod.html">Custom product</a>
+                    </li>
+                </ul>
+              <div id="cart-icon" onclick="location.href='cart.html'">
+                🛒 <span id="cart-count">0</span>
+              </div>
+            </div>
+        </div>
+    </nav>
+<script>document.addEventListener('DOMContentLoaded', () => {
+    const serviceContents = document.querySelectorAll('.website');
+    const checkScroll = () => {
+        serviceContents.forEach(content => {
+            const rect = content.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const isVisible = rect.top <= viewportHeight && rect.bottom >= 0;
+
+            if (isVisible) {
+                content.classList.add('visible');
+            } 
+        });
+    };
+
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Initial check
+});
+
+</script>
+    <div class="aboutus_information contactus website" >
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="text-center mb-5 website">Contact Us</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <form>
+                            <div class="form-group">
+                                <label for="name" class="website">Name</label>
+                                <input type="text" class="form-control website" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email"  class="website">Email address</label>
+                                <input type="email" class="form-control website" id="email" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <label for="message"  class="website">Message</label>
+                                <textarea class="form-control website" id="message" rows="5" placeholder="Enter your message"></textarea>
+                            </div>
+                            <br>
+                            <button class="contactus_button website" type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+    
+      <!-- Footer start -->
+<footer class="footer text-center text-lg-start bg-body-tertiary text-muted " style="background-color: rgb(71, 41, 3);">
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- Contact -->
+                    <h6 class="text-uppercase fw-bold mb-4 mt-3 ">
+                        <img src="image/logo/Architectural-removebg-preview.png" alt="" width="150px" height="150px"> 
+                    </h6>
+                    <p>
+                        <h4 style="color: rgb(227, 192, 146);">Contact</h4>
+                        <div style="color: #ffff;">
+                            <span class="fw-bold me-2">->Address :-</span><span >1972-72,Shop No-2,Captain Tapan Kumar Market, Chandni Chowk, Delhi 110006, India</span><br>
+                            <span class="fw-bold me-2">->Phone :-</span><span >+917982579208</span><br>
+                            <span class="fw-bold me-2">->Hours :-</span><span >10:00 am - 06:00 pm Mon - Sat</span>
+                        </div>
+                    </p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 mt-4 ">
+                    <!-- quick acces -->
+                    <h6 style="color: rgb(227, 192, 146);" class="text-uppercase fw-bold mb-4">Quick Access</h6>
+                    <div style="color: #fff; text-decoration: none;">
+                        <p><a href="aboutus1.html" class="text-reset" style="text-decoration: none;">About Us</a></p>
+                        <p><a href="services.html" class="text-reset" style="text-decoration: none;">Services</a></p>
+                        <p><a href="contactus.html" class="text-reset" style="text-decoration: none;">Contact Us</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 mt-4 ">
+                <!-- accounts -->
+                    <h6 style="color: rgb(227, 192, 146);" class="text-uppercase fw-bold mb-4">My Accounts</h6>
+                    <div style="color: #ffff;">
+                        <p><a href="sigin.html" class="text-reset" style="text-decoration: none;">Sign In</a></p>
+                        <p><a href="cart.html" class="text-reset" style="text-decoration: none;">View Cart</a></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 mt-4 ">
+                <!-- apps -->
+                    <h6  style="color: rgb(227, 192, 146);" class="text-uppercase fw-bold mb-4">Install App</h6>
+                    <p style="color: #ffff;"> From App Store or Google Play</p>
+                  
+                        <span><img  class="rounded-start rounded-end mb-3" src="image/footer/app.jpg" alt="" ></span> <br>
+                        <span ><img  class="rounded-start rounded-end" src="image/footer/play.jpg" alt="" ></span>
+                     <br>
+                    <p style="color: #ffff;">Secure Payment Gateways</p>
+                    <span><img src="image/footer/pay.png" alt=""></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- social media icons -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom container ">
+        <div style="color: #ffff;">
+            <a href="https://facebook.com/login/" class="me-4 text-reset" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/i/flow/login" class="me-4 text-reset" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.indiamart.com/venushandicrafts/" class="me-4 text-reset" target="_blank"><i class="fab fa-google"></i></a>
+            <a href="https://www.instagram.com/accounts/login/" class="me-4 text-reset" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/login" class="me-4 text-reset" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p style="color: white;">&copy; 2020 Copyright: VenusHandicrafts.com</p>
+    </section>
+  </footer>
+  <!-- footer end -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>

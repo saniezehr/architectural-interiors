@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internatioebsite Header Example</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--  custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
+    <!-- Custom js -->
+     <script src="animation.js"></script>
+    <!-- icon link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+
+   <style>
+    .footer{
+  position: relative;
+  width: 100%;
+}
+
+        .container-website{
+            background-image:linear-gradient(to left ,rgba(76, 45, 4, 0.148), rgb(58, 34, 2)), url('image/banner_home/lawn.jpg') ;
+             background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.8;
+height: 800px;
+/* display: fle; */
+
+        }
+.banner-heading{
+    text-align: center;
+    width: 100%;
+    font-size: 4rem;
+    color: rgb(227, 192, 146);
+    padding-top: 370px;
+    text-shadow:10px 0px 10px  rgb(71, 41, 3), 20px 20px 90px rgb(71, 41, 3);
+    filter: drop-shadow(3px 3px  rgb(29, 17, 0));
+    
+        }
+        .banner-text{
+            text-align: center;
+    width: 100%;
+    color: rgb(227, 192, 146);
+    text-shadow:5px 5px 3px  rgb(71, 41, 3), 20px 20px 90px rgb(71, 41, 3);
+        }
+        .shopnow_btn{
+    height: 50px;
+    width: 150px;
+    border-radius: 25px 25px ;
+    margin-left: 650px;
+    background-color: rgb(71, 41, 3);
+    color: rgb(227, 192, 146);
+    /* border: 1px solid rgb(227, 192, 146); */
+    filter: drop-shadow(2px 1px 2px rgb(227,192,146));
+  transform: translateX(-600px); /* Starts off-screen from above */
+            opacity: 0;
+    transition: opacity 2s ease-out, transform 2s ease-out;
+
+
+        }
+        .shopnow_btn:hover{
+            background-color: rgb(227, 192, 146);
+            color: rgb(71, 41, 3);
+
+        }
+        .shopnow_btn.visible{
+            opacity: 1;
+            transform: translateY(0); /* Moves to normal position */
+
+
+        }
+        .animation_for_hometext{
+            padding-left: 30px;
+            transform: translateX(-600px); /* Starts off-screen from above */
+            opacity: 0;
+    transition: opacity 2s ease-out, transform 2s ease-out;
+    
+
+        }
+        .animation_for_hometext.visible{
+            opacity: 0.9;
+            transform: translateY(0); /* Moves to normal position */
+        }
+        
+      @media(width < 768px){
+        .banner-heading{
+            font-size: 3rem;
+            padding-top: 350px;
+            width: 100%;
+        }
+        .animation_for_hometext{
+            margin-top: 0px;
+            padding-left: 0px;
+        }
+        .container-website{
+            height: 850px;
+            background-image:linear-gradient(to top,rgba(76, 45, 4, 0.268), rgba(66, 40, 3, 0.785)), url('image/banner_home/lawn.jpg') ;
+
+        }
+        .shopnow_btn{
+            margin-left: 100px;
+        }
+      }
+       
+        .scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgb(71, 41, 3);/* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.scroll-to-top-btn:hover {
+    background-color:rgb(71, 41, 3); /* Darker shade of primary color */
+}
+
+body {
+    overflow-x: hidden;
+}
+@media (max-width :768px){
+    body,html {
+        overflow-x: hidden;
+    }
+}
+    
+    .product {
+      border: 1px solid #ddd;
+      text-align: center;
+padding-bottom: 30px;
+    }
+    .product img {
+      width: 90%;
+      height: 400px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  
+    .product-div{
+      width: 95%;
+      margin-left: 40px;
+      margin-top: 70px;
+      justify-content: space-evenly;
+
+    }
+    
+    .btn-details{
+  height: 40px;
+  width: 120px;
+  border-radius: 10px;
+  background-color: rgb(96, 62, 18);
+  color: rgb(227, 192, 146);
+}
+.btn-details:hover{
+  background-color: rgb(227, 192, 146);
+  color: rgb(96, 62, 18);
+}
+.btn-details {
+  transition: all 0.3s ease-in-out 0s;
+}
+.view_more{
+    /* text-decoration: none; */
+margin-left: 725px;
+color: rgb(71, 41, 3);
+}
+@media (max-width : 768px){
+    .view_more{
+        margin-left: 140px;
+    }
+    .product-div{
+        margin-left: 0px;
+        width: 100%;
+    }
+}
+#products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      gap: 20px;
+    }
+    @media (width<768px){
+      #products{
+        grid-template-columns: repeat(1,1fr);
+       /* margin: 40px 10px; */
+       margin-left: 0px;
+       width: 100%;
+
+      }
+      
+    }
+
+   </style>
+</head>
+<body>
+    
+    <div class="full_page">
+        <!-- start header -->
+        <nav class="navbar navbar-expand-lg navbar-light " >
+            <div class="container">
+        
+              <a class="navbar-brand " href="#"> <img src="image/logo/Architectural-removebg-preview.png" alt="" width="100px" height="100px"></a>
+            
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon "></span>
+                </button>
+                <div class=" collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class=" navhighlighted nav-link active " href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"  data-bs-toggle="dropdown" >
+                                Products
+                              </a>
+                              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item " href="beds.html">Bed Room</a></li>
+                                <li><a class="dropdown-item " href="kids.html">Kids</a></li>
+                                <li><a class="dropdown-item " href="livingroom_sofa.html">Living Room</a></li>
+                                <li><a class="dropdown-item" href="diningroom_set.html">Dining Room</a></li>
+                                <li><a class="dropdown-item" href="studyroom_erconomic.html">Study Room</a></li>
+                                <li><a class="dropdown-item" href="office.html">Office</a></li>
+                                <li><a class="dropdown-item" href="kitchen.html">Kitchen</a></li>
+                                <li><a class="dropdown-item" href="mirror.html">Mirrors</a></li>
+                                <li><a class="dropdown-item" href="homedecor.html">Home Decor</a></li>
+                                <li><a class="dropdown-item" href="warddrobe.html">Warddrobe</a></li>
+                                <li><a class="dropdown-item" href="door.html">Doors</a></li>
+                                </li>
+                    </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="aboutus1.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contactus.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="customprod.html">Custom product</a>
+                        </li>
+                    </ul>
+                
+                  <div id="cart-icon" onclick="location.href='cart.html'">
+                    🛒 <span id="cart-count">0</span>
+                  </div>
+                </div>
+            </div>
+        </nav>
+        
+       
+        <div class="container-website">
+      
+        <h1 class="banner-heading animation_for_hometext col-lg-6 col-md-6 col-sm-12">Transformative Designs for Every Home</h1>
+        <p class="banner-text animation_for_hometext">"Elevate your living space with our curated selection of modern and timeless furniture."</p>
+        <!-- <div class=" banner_img col-lg-6 col-md-6 col-sm-12"><img src="image/banner_home/chair-removebg-preview.png" alt=""></div> -->
+        <a href="beds.html"> <button class="shopnow_btn btn ">SHOP NOW</button></a>
+    </div>
+    
+        <script>
+
+
+    // Function to show or hide the button based on scroll position
+    window.onscroll = function() {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    };
+
+    // Function to scroll to the top smoothly
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+</script>
+
+     
+        <!-- end header -->
+
+   
+<!-- categories -->
+ <br><br>
+<section id="about" class="website" >
+    <div class="container">
+        <div class="about-heading website">
+            <h2 class="content_scroll">OUR PRODUCTS</h2>
+            <p>Browse our full range of furniture categories, including:
+
+            </p>
+        </div>
+        
+        <div class="row">
+            
+            <div class="col-md-6 col-lg-4 website ">
+                <a href="beds.html">
+                <div class="about-item mt-3">
+                    <img src="image/product_aboutus/bed2.jpg"alt="Our Beds" width="100%"; height="430px">
+                    <div class="overlay">
+                        <div class="overlay-content text-center">
+                            <h3>OUR BED ROOM</h3>
+                            <p>Quality sleep, stylish design.</p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-lg-4 website mb-4 kidroom">
+                <a href="kids.html">
+                <div class="about-item" >
+                    <img src="image/product_aboutus/kdsroomi.jpg" alt="Our Sofas" class="img-fluid" >
+                    <div class="overlay">
+                        <div class="overlay-content text-center">
+                            <h3>KID ROOM</h3>
+                            <p>"Playful furniture for young imaginations."</p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 website mb-4">
+                <a href="mirror.html">
+                <div class="about-item mt-3" >
+                    <img src="image/product_aboutus/mirror.jpg" alt=""  width="100%"; height="430px">
+                    <div class="overlay">
+                        <div class="overlay-content text-center">
+                            <h3> OUR MIRROS</h3>
+                            <p>"Reflective accents for every space."</p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 website mb-4">
+                <a href="door.html">
+                <div class="about-item mt-3">
+                    <img src="image/product_aboutus/doors.jpg" alt="Our Tables" width="100%"; height="440px">
+                    <div class="overlay">
+                        <div class="overlay-content text-center">
+                            <h3> OUR DOORS</h3>
+                            <p>"Secure and stylish entryways..</p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 website mb-4">
+                <a href="livingroom_sofa.html">
+                <div class="about-item">
+                    <img src="image/product_aboutus/livingroom.jpg" alt="Our Cabinets"height="480px" width="100%">
+                    <div class="overlay">
+                        <div class="overlay-content text-center">
+                            <h3>OUR LIVING ROOM</h3>
+                            <p>"Relaxing sofas and elegant tables."</p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 website mb-4">
+                <div class="about-item mt-3">
+                    <a href="warddrobe.html">
+                    <img src="image/product_aboutus/wardrobe.jpg" alt="Our Mirrors" width="100%"; height="440px">
+                    <div class="overlay">
+                        <div class="overlay-content text-center">
+                            <h3> OUR WARDDROBE</h3>
+                            <p>Organized closets and storage solutions</p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 website mb-4">
+                <div class="about-item mt-3">
+                    <a href="office.html">
+                    <img src="image/product_aboutus/officeroom.jpg" alt="Our Desks" width="100%"; height="440px"> 
+                    <div class="overlay">
+                        <div class="overlay-content text-center">
+                            <h3>OFFICE</h3>
+                            <p>Professional desks and ergonomic chairs</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            </div>
+            <div class="col-md-6 col-lg-4  website mb-4">
+                <div class="about-item">
+                <a href="kitchen.html">
+                    <img src="image/product_aboutus/kitchen.jpg" alt="Our Shelves"height="480px" width="100%">
+                    <div class="overlay">
+                        <div class="overlay-content text-center">
+                            <h3>KITCHEN</h3>
+                            <p>Functional dining sets and kitchen islands</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            </div>
+            <div class="col-md-6 col-lg-4  website mb-4">
+                <div class="about-item mt-3">
+                    <a href="studyroom_erconomic.html">
+                    <img src="image/product_aboutus/study room.jpg" alt="Our Lighting"  width="100%"; height="440px">
+                    <div class="overlay">
+                        <div class="overlay-content text-center">
+                            <h3>STUDY ROOM</h3>
+                            <p>Focused desks and study-friendly chairs</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            </div>
+            <div class="col-md-6 col-lg-4  website mb-4">
+                <div class="about-item">
+                    <a href="homedecor.html">
+                    <img src="image/product_aboutus/home decor.jpg" alt="Our Rugs" class="img-fluid">
+                    <div class="overlay">
+                        <div class="overlay-content text-center">
+                            <h3>HOME DECOR </h3>
+                            <p> Stylish accents for every room</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            </div>
+        </div>
+    </div>
+</section>
+<br><br>
+
+<!-- about us animation -->
+<div class="aboutus_section website">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="aboutus_content website">
+                    <h2>About Us</h2>
+                    <p>Welcome to ARCHITECTURAL INTERIOR Store, where style meets comfort, where passion for furniture meets craftsmanship. Discover our story, explore our collections, and find pieces that turn houses into homes.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="slider_body">
+                    <div class="slider website">
+                        <div class="sliderimg">
+                            <span style="--i:1"><img src="image/aboutus_portion(3d)/bed.jpg" /></span>
+                            <span style="--i:2"><img src="image/aboutus_portion(3d)/greysofa.jpg" /></span>
+                            <span style="--i:3"><img src="image/aboutus_portion(3d)/home.jpg" /></span>
+                            <span style="--i:4"><img src="image/aboutus_portion(3d)/jar.jpg" /></span>
+                            <span style="--i:5"><img src="image/aboutus_portion(3d)/light.jpg" /></span>
+                            <span style="--i:6"><img src="image/aboutus_portion(3d)/studyroom.jpg" /></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><br>
+
+ <!-- video start  -->
+ <div class="container-fluid website p-0">
+  
+            <div class="video-container">
+                <video class="video-bg" autoplay loop muted>
+                    <source src="sofa_video.mp4" type="video/mp4">
+                </video>
+            
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-lg-8 col-xl-6 mx-auto">
+            <div class="content text-center text-white ">
+                <h1 class="website">LUXURIES & COMFORTABLE</h1>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- video end -->
+ <!-- <div class="container mt-5 website">
+       <a class="link" href="beds.html">
+        <div class="category-item  hover-card ">
+            <img src="image/categories_home/bed_room.jpg" alt="Category 1" >
+            <br><br>
+            <h5 class="categories-text">BED ROOM</h5>
+        </div>
+       </a>
+       <a class="link" href="kids.html">
+        <div class="category-item  hover-card">
+            <img src="image/categories_home/kid_bedroom.jpg" alt="Category 2">
+            <br><br>
+            <h5 class="categories-text">KIDS</h5>
+        </div>
+       </a>
+        <a class="link" href="livingroom_sofa.html">
+        <div class="category-item  hover-card">
+            <img src="image/categories_home/living_room.jpg" alt="Category 3">
+            <br><br>
+            <h5 class="categories-text"> LIVING ROOM</h5>
+        </div>
+       </a>
+        <a class="link" href="diningroom_set.html">
+        <div class="category-item  hover-card">
+            <img src="image/categories_home/dining_room.jpg" alt="Category 4" >
+            <br><br>
+            <h5 class="categories-text">DINING ROOM</h5>
+        </div>
+       </a>
+        <a class="link" href="studyroom_erconomic.html">
+        <div class="category-item  hover-card">
+            <img src="image/categories_home/study_room.jpg" alt="Category 5">
+            <br><br>
+            <h5 class="categories-text">STUDY ROOM</h5>
+        </div>
+       </a>
+        <a class="link" href="office.html">
+        <div class="category-item  hover-card">
+            <img src="image/categories_home/office.jpg" alt="Category 6">
+            <br><br>
+            <h5 class="categories-text">OFFICE</h5>
+        </div>
+       </a>
+        <a class="link" href="kitchen.html">
+        <div class="category-item  hover-card">
+            <img src="image/categories_home/kitchen.jpg" alt="Category 7">
+            <br><br>
+            <h5 class="categories-text">KITCHEN</h5>
+        </div>
+       </a>
+        <a class="link" href="mirror.html">
+        <div class="category-item  hover-card">
+            <img src="image/categories_home/mirrors.jpg" alt="Category 8">
+            <br><br>
+            <h5 class="categories-text">MIRRORS</h5>
+        </div>
+       </a>
+        <a class="link" href="homedecor.html">
+        <div class="category-item  hover-card">
+            <img src="image/categories_home/homedecor.jpg" alt="Category 9">
+            <br><br>
+            <h5 class="categories-text">HOME DECOR</h5>
+        </div>
+       </a>
+        <a class="link" href="warddrobe.html">
+        <div class="category-item  hover-card">
+            <img src="image/categories_home/wardrobe.jpg" alt="Category 10">
+            <br><br>
+            <h5 class="categories-text">WARDDROBE</h5>
+        </div>
+       </a>
+        <a class="link" href="door.html">
+        <div class="category-item  hover-card">
+          <img src="image/categories_home/doors.jpg" alt="Category 10">
+          <br><br>
+          <h5 class="categories-text">DOORS</h5>
+      </div>
+      <    </a>
+    
+   </div>  -->
+   <h2 class="text-center fs-1 website">BEST SELLER</h2>
+   <a href="bestsell.html" class="view_more fs-6 website">view more</a> 
+   <div class="product-div website " id="products"></div>
+
+   <script>
+    const products = [
+    { id: 21, name: "Teal Blue Queen Size bed With Modern Curved Velvet Wingback Headboard", delprice:19000, price: 17500, image: "image/beds/queensize/queen9.jpg" },
+    { id: 343, name: "Full Length Led Mirror", delprice: 15000, price:6500, image: "image/mirror/m4.jpg"},
+    { id: 352, name: "Cloud Candle", delprice: 8000, price:5500, image: "image/home_decor/candles/c2.jpg"},
+    { id: 135, name: " Wooden Race Car Bed WIth Storage Shelves & Wheels For Kids", delprice: 26000, price:23000, image: "image/kidsroom/beds/b13.jpg"},
+    { id: 146, name: "Cute Avocado Kids Light", delprice: 6000,price:4000, image: "image/kidsroom/lights/l1.jpg" },
+    { id: 291, name: "Comfortable Fur Chair ", delprice: 25700, price:23000, image: "image/studyroom/ergonomic_chair/e8.jpg"},
+
+
+];
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  document.getElementById('cart-count').textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+}
+
+function renderProducts() {
+  const productsContainer = document.getElementById('products');
+  products.forEach(product => {
+    const productDiv = document.createElement('div');
+    productDiv.className = 'product';
+    productDiv.innerHTML = `
+    <div class = "hover-card" >
+      <img src="${product.image}" alt="">
+      <h4>${product.name}</h4>
+  <del>${product.delprice}</del>
+      <p>Price: ${product.price.toFixed()}rs</p>
+<button onclick="location.href='product-detail.html?id=${product.id}'" class="btn-details">View Details</button>
+</div>
+    `;
+    productsContainer.appendChild(productDiv);
+  });
+}
+
+window.addEventListener('load', () => {
+  renderProducts();
+  updateCartCount();
+});
+
+</script>
+<!-- contact start -->
+ <div class="aboutus_information contactus website" >
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5 website">Contact Us</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form>
+                        <div class="form-group">
+                            <label for="name" class="website">Name</label>
+                            <input type="text" class="form-control website" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email"  class="website">Email address</label>
+                            <input type="email" class="form-control website" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message"  class="website">Message</label>
+                            <textarea class="form-control website" id="message" rows="5" placeholder="Enter your message"></textarea>
+                        </div>
+                        <br>
+                        <button class="contactus_button website" type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+ </div>
+<!-- contact end-->
+ 
+    
+ <!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" class="scroll-to-top-btn" onclick="scrollToTop()">↑</button>
+
+ <!-- Footer start -->
+<footer class="footer text-center text-lg-start bg-body-tertiary text-muted " style="background-color: rgb(71, 41, 3);">
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- Contact -->
+                    <h6 class="text-uppercase fw-bold mb-4 mt-3 ">
+                        <img src="image/logo/Architectural-removebg-preview.png" alt="" width="150px" height="150px"> 
+                    </h6>
+                    <p>
+                        <h4 style="color: rgb(227, 192, 146);">Contact</h4>
+                        <div style="color: #ffff;">
+                            <span class="fw-bold me-2">->Address :-</span><span >1972-72,Shop No-2,Captain Tapan Kumar Market, Chandni Chowk, Delhi 110006, India</span><br>
+                            <span class="fw-bold me-2">->Phone :-</span><span >+917982579208</span><br>
+                            <span class="fw-bold me-2">->Hours :-</span><span >10:00 am - 06:00 pm Mon - Sat</span>
+                        </div>
+                    </p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 mt-4 ">
+                    <!-- quick acces -->
+                    <h6 style="color: rgb(227, 192, 146);" class="text-uppercase fw-bold mb-4">Quick Access</h6>
+                    <div style="color: #fff; text-decoration: none;">
+                        <p><a href="aboutus1.html" class="text-reset" style="text-decoration: none;">About Us</a></p>
+                        <p><a href="services.html" class="text-reset" style="text-decoration: none;">Services</a></p>
+                        <p><a href="contactus.html" class="text-reset" style="text-decoration: none;">Contact Us</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 mt-4 ">
+                <!-- accounts -->
+                    <h6 style="color: rgb(227, 192, 146);" class="text-uppercase fw-bold mb-4">My Accounts</h6>
+                    <div style="color: #ffff;">
+                        <p><a href="sigin.html" class="text-reset" style="text-decoration: none;">Sign In</a></p>
+                        <p><a href="cart.html" class="text-reset" style="text-decoration: none;">View Cart</a></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 mt-4 ">
+                <!-- apps -->
+                    <h6  style="color: rgb(227, 192, 146);" class="text-uppercase fw-bold mb-4">Install App</h6>
+                    <p style="color: #ffff;"> From App Store or Google Play</p>
+                  
+                        <span><img  class="rounded-start rounded-end mb-3" src="image/footer/app.jpg" alt="" ></span> <br>
+                        <span ><img  class="rounded-start rounded-end" src="image/footer/play.jpg" alt="" ></span>
+                     <br>
+                    <p style="color: #ffff;">Secure Payment Gateways</p>
+                    <span><img src="image/footer/pay.png" alt=""></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- social media icons -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom container ">
+        <div style="color: #ffff;">
+            <a href="https://facebook.com/login/" class="me-4 text-reset" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/i/flow/login" class="me-4 text-reset" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.indiamart.com/venushandicrafts/" class="me-4 text-reset" target="_blank"><i class="fab fa-google"></i></a>
+            <a href="https://www.instagram.com/accounts/login/" class="me-4 text-reset" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/login" class="me-4 text-reset" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p style="color: white;">&copy; 2020 Copyright: VenusHandicrafts.com</p>
+    </section>
+  </footer>
+  <!-- footer end -->
+ </div>
+
+    
+
+
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        </div>
+</body>
+</html>

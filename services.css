@@ -1,0 +1,111 @@
+.container-web {
+    padding: 0;
+    max-width: 100%; 
+    margin: 0 auto;
+}
+
+       .services_page{
+        background-color: rgb(227, 192, 146);
+        clip-path: ellipse(80% 80% at 50% 5%);
+        padding-bottom: 600px;
+        }
+        .service {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0px 10px 40px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+           margin-top: 20px;
+            transition: transform 0.6s ease-in-out, box-shadow 0.3s ease;
+        }
+        .service:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 6px 12px rgb(227,192,146);
+        }
+        .service-icon {
+            font-size: 3rem;
+            color: rgb(71,41,3);
+        }
+        .service-content {
+            height: 400px;
+            max-width: 600px;
+            opacity: 0;
+    transform: translateY(-100px); /* Starts off-screen from above */
+    transition: opacity 2s ease-out, transform 2s ease-out;
+
+        }
+        .service-content-banner{
+            max-width: 600px;
+            opacity: 0;
+    transform: translateY(-90px); /* Starts off-screen from above */
+    transition: opacity 2s ease-out, transform 2s ease-out;
+    margin-top: 300px;
+    font-size: 4rem;
+
+        }
+        .service-content-banner.visible{
+            opacity: 1;
+            transform: translateY(0); /* Moves to normal position */
+        }
+        .service-content.visible{
+            opacity: 1;
+            transform: translateY(0); /* Moves to normal position */
+        }
+        .service-content h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        .service-content p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+        @media (max-width: 768px) {
+    .service {
+        flex-direction: column;
+        text-align: center;
+        margin: 20px;
+
+    }
+   
+   .services_banner_img{
+    background-size: cover;
+    background-position: center;
+   }
+    .services_para h3{
+       font-size: 30px;
+    }
+    .services_page{
+        margin-top: 20px;
+        clip-path: ellipse(80% 80% at 50% 50%);
+
+    }
+}
+        .services_banner{
+            height: auto;
+            display: flex;
+            width: 100%;
+        }
+        .services_para{
+            background-color: rgb(227, 192, 146);
+            width: 50%;
+            height: 900px;
+            opacity: 0.8;
+            font-size: 20px;
+             }
+            
+        .services_banner_img{
+background-image: url('image/services/servicesbanner.jpg');
+background-position: center;
+background-size: cover;
+            width: 50%;
+            height: 900px;
+             opacity: 0;
+    transform: translateY(-100px); /* Starts off-screen from above */
+    transition: opacity 2s ease-out, transform 2s ease-out;
+        }
+        .services_banner_img.visible{
+            opacity: 0.7;
+            transform: translateY(0); /* Moves to normal position */
+        }

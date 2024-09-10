@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+/* .builder-section{
+    margin-top: 100px;
+} */
+.builder-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+.builder-container {
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    /* overflow: hidden;     */
+}
+
+.preview-section, .options-section {
+    padding: 2rem;
+}
+
+.preview-section {
+    border-right: 1px solid #eee;
+    text-align: center;
+}
+
+.preview {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 1rem;
+}
+
+.preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.price h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.options-section {
+    max-width: 300px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.option-group {
+    margin-bottom: 1.5rem;
+}
+
+.option-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: bold;
+}
+
+.option-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.btn-sent-product {
+
+        height: 50px;
+        width: 120px;
+        border-radius: 30px;
+        background-color:rgb(71,41,3);
+        color: rgb(226,192,146);
+        font-size:1rem;
+        border: 2px solid rgb(71,41,3);
+        transition: all 0.3s ease-in-out 0s;
+  
+      }
+     
+
+
+.btn-sent-product:hover{
+  
+        background-color: rgb(226,192,146);
+        color: rgb(71,41,3);
+        font-size: 15px;
+        font-weight:bold;
+  
+        border: 2px solid rgb(71,41,3);
+      
+  }
+  @media(max-width :768px){
+    .builder-container{
+       display: inline-block;
+    }
+}

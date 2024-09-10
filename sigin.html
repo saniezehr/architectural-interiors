@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sign in</title>
+  <link rel="stylesheet" href="signin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form class="login-form " >
+                <h2>SIGN IN TO YOUR ACCOUNT</h2>
+                <input type="text" required placeholder="Username" id="user" autocomplete="off" />
+                <span id="vaild-name"></span>
+
+                <input oninput="return formvalid()" type="password" required placeholder="Password" id="pass"
+                    autocomplete="off" />
+                <img src="https://cdn2.iconfinder.com/data/icons/basic-ui-interface-v-2/32/hide-512.png"
+                    onclick="show()" id="showimg">
+                <span id="vaild-pass"></span>
+                <button type="submit">SIGN IN</button>
+            </form>
+        </div>
+    </div>
+    <script src="signin.js"></script>>
+
+</body>
+</html>

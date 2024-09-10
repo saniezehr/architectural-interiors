@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Furniture Store</title>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+/>
+<link rel="stylesheet" href="aboutus.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="header.css">
+<!-- custom js -->
+ <script src="animation.js"></script>
+    <!-- icon link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+
+
+<head>
+</head>
+<body>
+   <!-- start header -->
+    <div class="full_page">
+        <nav class="navbar navbar-expand-lg navbar-light " >
+            <div class="container">
+              <a class="navbar-brand " href="#"> <img src="image/logo/Architectural-removebg-preview.png" alt="" width="100px" height="100px"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon "></span>
+                </button>
+                <div class=" collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                    
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"  data-bs-toggle="dropdown" >
+                                Products
+                              </a>
+                              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item bed text-dark" href="beds.html">Bed Room</a></li>
+                                <li><a class="dropdown-item " href="kids.html">Kids</a></li>
+                                <li><a class="dropdown-item " href="livingroom_sofa.html">Living Room</a></li>
+                                <li><a class="dropdown-item " href="diningroom_set.html">Dining Room</a></li>
+                                <li><a class="dropdown-item" href="studyroom_erconomic.html">Study Room</a></li>
+                                <li><a class="dropdown-item" href="office.html">Office</a></li>
+                                <li><a class="dropdown-item" href="kitchen.html">Kitchen</a></li>
+                                <li><a class="dropdown-item" href="mirror.html">Mirrors</a></li>
+                                <li><a class="dropdown-item" href="homedecor.html">Home Decor</a></li>
+                                <li><a class="dropdown-item" href="warddrobe.html">Warddrobe</a></li>
+                                <li><a class="dropdown-item" href="door.html">Doors</a></li>
+                        </li>
+                    </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navhighlighted " href="aboutus1.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contactus.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="customprod.html">Custom product</a>
+                        </li>
+                    </ul>
+                
+                <!-- <form class="search">
+                    <input class=" form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form> -->
+                  <div id="cart-icon" onclick="location.href='cart.html'">
+                    🛒 <span id="cart-count">0</span>
+                  </div>
+                </div>
+            </div>
+        </nav>
+    <!-- end header -->
+<script>
+                 document.addEventListener('DOMContentLoaded', () => {
+    const serviceContents = document.querySelectorAll('.banner-heading');
+    const checkScroll = () => {
+        serviceContents.forEach(content => {
+            const rect = content.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const isVisible = rect.top <= viewportHeight && rect.bottom >= 0;
+
+            if (isVisible) {
+                content.classList.add('visible');
+            } 
+        });
+    };
+
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Initial check
+    
+});
+
+</script>
+    <div class="aboutus_section ">
+        <div class="container">
+            <div class="row website">
+                <div class="col-md-6">
+                    <div class="aboutus_content website">
+                        <h2>About Us</h2>
+                        <p>Welcome to ARCHITECTURAL INTERIOR Store, where style meets comfort, where passion for furniture meets craftsmanship. Discover our story, explore our collections, and find pieces that turn houses into homes.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="slider_body">
+                        <div class="slider">
+                            <div class="sliderimg">
+                                <span style="--i:1"><img src="image/aboutus_portion(3d)/bed.jpg" /></span>
+                                <span style="--i:2"><img src="image/aboutus_portion(3d)/greysofa.jpg" /></span>
+                                <span style="--i:3"><img src="image/aboutus_portion(3d)/home.jpg" /></span>
+                                <span style="--i:4"><img src="image/aboutus_portion(3d)/jar.jpg" /></span>
+                                <span style="--i:5"><img src="image/aboutus_portion(3d)/light.jpg" /></span>
+                                <span style="--i:6"><img src="image/aboutus_portion(3d)/studyroom.jpg" /></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+<!-- products -->
+
+<h1 class="categories-text text-center website">BROWSE BY CATEGORIES</h1>
+<br>
+<div class="container mt-5 website">
+ <div class="category-slider">
+    <a class="link"href="beds.html">
+     <div class="category-item  hover-card ">
+         <img src="image/categories_home/bed_room.jpg" alt="Category 1" >
+         <br><br>
+         <h5 class="categories-text">BED ROOM</h5>
+     </div>
+    </a>
+    <a class="link"href="kids.html">
+     <div class="category-item  hover-card">
+         <img src="image/categories_home/kid_bedroom.jpg" alt="Category 2">
+         <br><br>
+         <h5 class="categories-text">KIDS</h5>
+     </div>
+    </a>
+     <a class="link"href="livingroom_sofa.html">
+     <div class="category-item  hover-card">
+         <img src="image/categories_home/living_room.jpg" alt="Category 3">
+         <br><br>
+         <h5 class="categories-text"> LIVING ROOM</h5>
+     </div>
+    </a>
+     <a class="link"href="diningroom_set.html">
+     <div class="category-item  hover-card">
+         <img src="image/categories_home/dining_room.jpg" alt="Category 4" >
+         <br><br>
+         <h5 class="categories-text">DINING ROOM</h5>
+     </div>
+    </a>
+     <a class="link"href="studyroom_erconomic.html">
+     <div class="category-item  hover-card">
+         <img src="image/categories_home/study_room.jpg" alt="Category 5">
+         <br><br>
+         <h5 class="categories-text">STUDY ROOM</h5>
+     </div>
+    </a>
+     <a class="link"href="office.html">
+     <div class="category-item  hover-card">
+         <img src="image/categories_home/office.jpg" alt="Category 6">
+         <br><br>
+         <h5 class="categories-text">OFFICE</h5>
+     </div>
+    </a>
+     <a class="link"href="kitchen.html">
+     <div class="category-item  hover-card">
+         <img src="image/categories_home/kitchen.jpg" alt="Category 7">
+         <br><br>
+         <h5 class="categories-text">KITCHEN</h5>
+     </div>
+    </a>
+     <a class="link"href="mirror.html">
+     <div class="category-item  hover-card">
+         <img src="image/categories_home/mirrors.jpg" alt="Category 8">
+         <br><br>
+         <h5 class="categories-text">MIRRORS</h5>
+     </div>
+    </a>
+     <a class="link"href="homedecor.html">
+     <div class="category-item  hover-card">
+         <img src="image/categories_home/homedecor.jpg" alt="Category 9">
+         <br><br>
+         <h5 class="categories-text">HOME DECOR</h5>
+     </div>
+    </a>
+     <a class="link"href="warddrobe.html">
+     <div class="category-item  hover-card">
+         <img src="image/categories_home/wardrobe.jpg" alt="Category 10">
+         <br><br>
+         <h5 class="categories-text">WARDDROBE</h5>
+     </div>
+    </a>
+     <a class="link"href="door.html">
+     <div class="category-item  hover-card">
+       <img src="image/categories_home/doors.jpg" alt="Category 10">
+       <br><br>
+       <h5 class="categories-text">DOORS</h5>
+   </div>
+      </a>
+ </div>
+</div>  
+<br><br><br><br> 
+<!-- categories end-->
+ <!-- our mission -->
+<div class="aboutus_information website" style="padding-bottom: 150px;">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class=" our_mission aboutus_content website mt-0  ">
+                <h2> Our Mission</h2>
+                <p>Driven by a commitment to mention core values like (quality, 
+                    craftsmanship, sustainability), our mission is to 
+                    mention goal, quality of our products .
+
+                </p>
+            </div>
+        </div>
+<!-- craftsmanship & passion -->
+        <div class="col-md-6">
+            <div class=" aboutus_content website mt-0 mb-2 ">
+                <h2> Craftsmanship and Passion</h2>
+                <p>Highlight your dedication to craftsmanship and passion for creating 
+                    furniture that transforms spaces into inviting homes. Talk about the 
+                    attention to detail and the expertise of your team in curating and
+                     designing each piece.
+                </p>
+            </div>
+        </div>
+<!-- design philosophy -->
+        <div class="col-md-6">
+            <div class=" design_philosophy aboutus_content website mt-0">
+                <h2> Design Philosophy</h2>
+                <p>
+                     Share your unique design philosophy. 
+                     Whether it's modern minimalism, vintage charm, 
+                     or eclectic mixtures, describe how your furniture reflects
+                      these principles and enhances diverse interior styles.
+                </p>
+            </div>
+        </div>
+<!-- sustainability commitment -->
+        <div class="col-md-6">
+            <div class="aboutus_content website mt-0">
+                <h2> Sustainability Commitment</h2>
+                <p> If applicable, emphasize your commitment to sustainability.
+                     Discuss how your furniture is crafted from responsibly sourced materials,
+                     contributing to environmental conservation and ethical practices.
+
+
+                </p>
+            </div>
+        </div>
+        <!-- customer-centric approch -->
+
+        <div class="col-md-6">
+            <div class="aboutus_content website mt-3">
+                <h2>Customer-Centric Approach</h2>
+                <p>Showcase your commitment to customer satisfaction.
+                     Discuss personalized services, such as custom furniture options,
+                      interior design consultations, or efficient delivery and assembly
+                       services.
+                </p>
+            </div>
+        </div>
+<!-- vission -->
+        <div class="col-md-6">
+            <div class="aboutus_content website mt-3">
+                <h2> Vision for the Future</h2>
+                <p> Convey your vision for the future of your furniture store.
+                     Discuss upcoming collections, expansion plans, or new services
+                      you plan to introduce, demonstrating your commitment to growth
+                       and innovation.
+                </p>
+            </div>
+        </div>
+     </div>
+</div>
+
+</div>
+
+<section id="team" class="section">
+    <div class="container">
+        <h2 class="text-center mb-5 website">Meet Our Team</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 ">
+                <div class="card team-member website">
+                    <img src="image/team_member_aboutus/girl1-removebg-preview.png" class="card-img-top" alt="Team Member 1" height="400px">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">ZARA</h5>
+                        <p class="card-text">Founder & CEO</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card team-member website ">
+                    <img src="image/team_member_aboutus/hijabigirlc.png" class="card-img-top" alt="Team Member 2" height="400px">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">MIRAAL</h5>
+                        <p class="card-text">Lead Designer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card team-member website">
+                    <img src="image/team_member_aboutus/men1-removebg-preview.png" class="card-img-top" alt="Team Member 3" height="400px">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">SAAD</h5>
+                        <p class="card-text">Marketing Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="aboutus_information contactus website" >
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="text-center mb-5 website">Contact Us</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    br
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+                    </div>
+                    <br>
+                    <button class="contactus_button" type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<!-- Footer start -->
+<footer class="footer text-center text-lg-start bg-body-tertiary text-muted " style="background-color: rgb(71, 41, 3);">
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- Contact -->
+                    <h6 class="text-uppercase fw-bold mb-4 mt-3 ">
+                        <img src="image/logo/Architectural-removebg-preview.png" alt="" width="150px" height="150px"> 
+                    </h6>
+                    <p>
+                        <h4 style="color: rgb(227, 192, 146);">Contact</h4>
+                        <div style="color: #ffff;">
+                            <span class="fw-bold me-2">->Address :-</span><span >1972-72,Shop No-2,Captain Tapan Kumar Market, Chandni Chowk, Delhi 110006, India</span><br>
+                            <span class="fw-bold me-2">->Phone :-</span><span >+917982579208</span><br>
+                            <span class="fw-bold me-2">->Hours :-</span><span >10:00 am - 06:00 pm Mon - Sat</span>
+                        </div>
+                    </p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 mt-4 ">
+                    <!-- quick acces -->
+                    <h6 style="color: rgb(227, 192, 146);" class="text-uppercase fw-bold mb-4">Quick Access</h6>
+                    <div style="color: #fff; text-decoration: none;">
+                        <p><a href="aboutus1.html" class="text-reset" style="text-decoration: none;">About Us</a></p>
+                        <p><a href="services.html" class="text-reset" style="text-decoration: none;">Services</a></p>
+                        <p><a href="contactus.html" class="text-reset" style="text-decoration: none;">Contact Us</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 mt-4 ">
+                <!-- accounts -->
+                    <h6 style="color: rgb(227, 192, 146);" class="text-uppercase fw-bold mb-4">My Accounts</h6>
+                    <div style="color: #ffff;">
+                        <p><a href="sigin.html" class="text-reset" style="text-decoration: none;">Sign In</a></p>
+                        <p><a href="cart.html" class="text-reset" style="text-decoration: none;">View Cart</a></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 mt-4 ">
+                <!-- apps -->
+                    <h6  style="color: rgb(227, 192, 146);" class="text-uppercase fw-bold mb-4">Install App</h6>
+                    <p style="color: #ffff;"> From App Store or Google Play</p>
+                  
+                        <span><img  class="rounded-start rounded-end mb-3" src="image/footer/app.jpg" alt="" ></span> <br>
+                        <span ><img  class="rounded-start rounded-end" src="image/footer/play.jpg" alt="" ></span>
+                     <br>
+                    <p style="color: #ffff;">Secure Payment Gateways</p>
+                    <span><img src="image/footer/pay.png" alt=""></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- social media icons -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom container ">
+        <div style="color: #ffff;">
+            <a href="https://facebook.com/login/" class="me-4 text-reset" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/i/flow/login" class="me-4 text-reset" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.indiamart.com/venushandicrafts/" class="me-4 text-reset" target="_blank"><i class="fab fa-google"></i></a>
+            <a href="https://www.instagram.com/accounts/login/" class="me-4 text-reset" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/login" class="me-4 text-reset" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p style="color: white;">&copy; 2020 Copyright: VenusHandicrafts.com</p>
+    </section>
+  </footer>
+  <!-- footer end -->
+    </div>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

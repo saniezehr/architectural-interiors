@@ -1,0 +1,131 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    /* width: 100%;  */
+    margin-right: 0px;}
+
+.navbar {
+    background-color: rgb(71, 41, 3);
+    font-size: 19px;
+    z-index: 999;
+    position: fixed ;
+    width: 100%;
+}
+
+.navbar-nav {
+    background-color: rgb(71, 41, 3);
+    /* position: relative !important; */
+    /* width: 100%; */
+    top: 100%;
+}
+
+.header_content {
+    color: white;
+}
+
+#navbarNav ul li {
+    margin-right: 20px;
+}
+
+#navbarNav ul li:last-child {
+    margin-right: 0;
+}
+
+#navbarNav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#navbarNav ul li a:hover {
+    color: rgb(227, 192, 146);
+}
+
+
+.navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+    width: 100%;
+    margin-top: 0;
+    background-color: rgb(71, 41, 3);
+    border: none;
+    color: rgb(227, 192, 146);
+}
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+    background-color: rgb(71, 41, 3);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed;
+    }
+
+    .navbar-toggler {
+        color: white;
+        border: none;
+    }
+
+    
+    .navbar-collapse {
+        background-color: rgb(71, 41, 3);
+        
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9;
+        overflow-y: auto;
+        
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .navbar-nav .nav-item {
+        text-align: center;
+    }
+
+    .navbar-nav .dropdown-menu {
+        position: static;
+        float: none;
+        width: 100%;
+        margin-top: 0;
+        background-color: rgb(71, 41, 3);
+        border: none;
+    }
+
+    .navbar-nav .dropdown-menu .dropdown-item {
+        color: #fff;
+        padding: 10px 15px;
+    }
+
+    .navbar-nav .dropdown-menu .dropdown-item:hover {
+        background-color: rgb(71, 41, 3);
+    }
+}
+#cart-icon {
+    position: absolute;
+    margin-top:20px;
+    margin-bottom:10px;
+    right: 20px;
+    background-color: rgb(71, 41, 3);
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #cart-icon span {
+    margin-left: 5px;
+    font-weight: bold;
+  } 
+ .navhighlighted {
+    color: rgb(227, 192, 146) !important;
+    /* font-weight: bold; */
+}
+.navhighlighted:hover {
+    color: rgb(227, 192, 146); /* Keeps the highlighted color on hover */
+}
